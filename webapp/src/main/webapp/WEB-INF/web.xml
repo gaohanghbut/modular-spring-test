@@ -1,0 +1,32 @@
+<web-app id="WebApp_9" version="2.4"
+         xmlns="http://java.sun.com/xml/ns/j2ee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_3_1.xsd">
+
+  <!--<servlet>-->
+  <!--<servlet-name>web</servlet-name>-->
+  <!--<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
+  <!--<init-param>-->
+  <!--<param-name>contextConfigLocation</param-name>-->
+  <!--<param-value>WEB-INF/applicationContext.xml</param-value>-->
+  <!--</init-param>-->
+  <!--<load-on-startup>1</load-on-startup>-->
+  <!--</servlet>-->
+  <servlet>
+    <servlet-name>web</servlet-name>
+    <servlet-class>cn.yxffcode.modularspring.webmvc.ModularDispatcherServlet</servlet-class>
+    <init-param>
+      <param-name>webModuleNamePrefix</param-name>
+      <param-value>cn.yxffcode.test.web</param-value>
+    </init-param>
+    <init-param>
+      <param-name>commonApplicationContext</param-name>
+      <param-value>/WEB-INF/applicationContext.xml</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>web</servlet-name>
+    <url-pattern>*.json</url-pattern>
+  </servlet-mapping>
+</web-app>

@@ -1,0 +1,4 @@
+{
+  "moduleName": "cn.yxffcode.test.coreservice",
+  "dependenceModules": ["cn.yxffcode.test.commondal", "cn.yxffcode.test.commonsal"]
+}

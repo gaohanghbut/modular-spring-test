@@ -1,0 +1,4 @@
+{
+  "moduleName": "cn.yxffcode.test.bizstatistics",
+  "dependenceModules": ["cn.yxffcode.test.coreservice"]
+}

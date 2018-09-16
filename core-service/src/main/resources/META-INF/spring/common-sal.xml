@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:modular="http://www.yxffcode.cn/modular"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.yxffcode.cn/modular http://www.yxffcode.cn/modular.xsd">
+
+  <modular:auto-stub/>
+
+  <context:component-scan base-package="cn.yxffcode.modularspring">
+    <context:exclude-filter type="custom" expression="cn.yxffcode.modularspring.boot.spring.ModuleTypeFilter"/>
+  </context:component-scan>
+
+  <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource"/>
+  <modular:extension-point extension-name="dataSource" ref="dataSource"/>
+
+  <modular:reference name="testStubService" interface="cn.yxffcode.modularspring.service.TestStubService"/>
+
+  <modular:stub interface="cn.yxffcode.modularspring.service.TestStubService"
+                invocation-handler="cn.yxffcode.modularspring.test.TestStubInvocationHandler"/>
+
+  <bean id="ext2" class="java.lang.Object"/>
+  <modular:extension-point extension-name="testExtensionContainer" ref="ext2"/>
+</beans>

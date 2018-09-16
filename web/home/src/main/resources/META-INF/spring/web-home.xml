@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:modular="http://www.yxffcode.cn/modular"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.yxffcode.cn/modular http://www.yxffcode.cn/modular.xsd">
+
+  <context:component-scan base-package="cn.yxffcode.test.web.home">
+    <context:exclude-filter type="custom" expression="cn.yxffcode.modularspring.boot.spring.ModuleTypeFilter"/>
+  </context:component-scan>
+
+  <mvc:interceptors>
+    <mvc:interceptor>
+      <mvc:mapping path="/index.json"/>
+      <bean class="cn.yxffcode.test.web.home.TestHandlerIntercepter"/>
+    </mvc:interceptor>
+  </mvc:interceptors>
+
+  <bean name="ext3" class="java.lang.Object"/>
+  <modular:extension-point extension-name="testExtensionContainer" ref="ext3"/>
+
+</beans>

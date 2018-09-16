@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:modular="http://www.yxffcode.cn/modular"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.yxffcode.cn/modular http://www.yxffcode.cn/modular.xsd">
+
+  <context:component-scan base-package="cn.yxffcode.modularspring.service"/>
+
+  <modular:extension name="dataSource" interface="javax.sql.DataSource"/>
+
+  <bean name="ext1" class="java.lang.Object"/>
+  <modular:extension-point extension-name="testExtensionContainer" ref="ext1"/>
+
+</beans>
