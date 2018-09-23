@@ -36,4 +36,8 @@
   <modular:extension-point extension-name="testExtensionHandler" ref="ext2"/>
   <modular:extension-point extension-name="testExtensionHandler" ref="ext2"/>
 
+  <context:component-scan base-package="cn.yxffcode.modularspring.test.core">
+    <context:exclude-filter type="custom" expression="cn.yxffcode.modularspring.boot.spring.ModuleTypeFilter"/>
+  </context:component-scan>
+
 </beans>
