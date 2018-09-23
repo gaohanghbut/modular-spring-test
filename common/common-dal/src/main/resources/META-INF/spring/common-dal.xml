@@ -4,4 +4,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.yxffcode.cn/modular http://www.yxffcode.cn/modular.xsd">
 
   <modular:extension name="testExtensionContainer" interface="cn.yxffcode.modularspring.core.ext.ExtensionContainer"/>
+
+  <bean id="testExtensionHandler" class="cn.yxffcode.modularspring.service.TestExtensionHandler"/>
+  <modular:extension-handler name="testExtensionHandler" handler-bean-ref="testExtensionHandler">
+    <modular:listener-method name="addDataSource" extension-type="javax.sql.DataSource"/>
+    <modular:listener-method name="addExtension" extension-type="java.lang.Object"/>
+  </modular:extension-handler>
 </beans>

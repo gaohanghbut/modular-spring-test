@@ -25,4 +25,15 @@
 
   <bean id="ext2" class="java.lang.Object"/>
   <modular:extension-point extension-name="testExtensionContainer" ref="ext2"/>
+
+  <modular:extension-point extension-name="testExtensionHandler" ref="dataSource"/>
+  <modular:extension-point extension-name="testExtensionHandler" ref="dataSource"/>
+  <modular:extension-point extension-name="testExtensionHandler" ref="dataSource"/>
+  <modular:extension-point extension-name="testExtensionHandler" ref="dataSource"/>
+  <modular:extension-point extension-name="testExtensionHandler" ref="dataSource"/>
+  <modular:extension-point extension-name="testExtensionHandler" ref="ext2"/>
+  <modular:extension-point extension-name="testExtensionHandler" ref="ext2"/>
+  <modular:extension-point extension-name="testExtensionHandler" ref="ext2"/>
+  <modular:extension-point extension-name="testExtensionHandler" ref="ext2"/>
+
 </beans>

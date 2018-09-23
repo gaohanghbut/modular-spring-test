@@ -3,7 +3,6 @@ import cn.yxffcode.modularspring.boot.DefaultModuleLoaderFactory;
 import cn.yxffcode.modularspring.boot.ModuleConfig;
 import cn.yxffcode.modularspring.core.ModularSpringConfiguration;
 import cn.yxffcode.modularspring.core.context.ModuleApplicationContext;
-import plugintest.api.TestService;
 
 import java.lang.reflect.Field;
 import java.util.Map;
@@ -18,18 +17,18 @@ public class Starter {
     final ApplicationManager applicationManager = new ApplicationManager(modularSpringConfiguration, new DefaultModuleLoaderFactory());
     applicationManager.boot();
 
-    final Field field = applicationManager.getClass().getDeclaredField("applicationContexts");
-    field.setAccessible(true);
-    final Map<ModuleConfig, ModuleApplicationContext> applicationContexts = (Map<ModuleConfig, ModuleApplicationContext>) field.get(applicationManager);
-
-    for (Map.Entry<ModuleConfig, ModuleApplicationContext> en : applicationContexts.entrySet()) {
-      if (!"cn.yxffcode.test.commonsal".equals(en.getKey().getModuleName())) {
-        continue;
-      }
-      final ModuleApplicationContext ctx = en.getValue();
-      final TestService testPluginService = (TestService) ctx.getBean("testPluginService");
-      testPluginService.f();
-    }
+//    final Field field = applicationManager.getClass().getDeclaredField("applicationContexts");
+//    field.setAccessible(true);
+//    final Map<ModuleConfig, ModuleApplicationContext> applicationContexts = (Map<ModuleConfig, ModuleApplicationContext>) field.get(applicationManager);
+//
+//    for (Map.Entry<ModuleConfig, ModuleApplicationContext> en : applicationContexts.entrySet()) {
+//      if (!"cn.yxffcode.test.commonsal".equals(en.getKey().getModuleName())) {
+//        continue;
+//      }
+//      final ModuleApplicationContext ctx = en.getValue();
+//      final TestService testPluginService = (TestService) ctx.getBean("testPluginService");
+//      testPluginService.f();
+//    }
 
     applicationManager.destroy();
   }

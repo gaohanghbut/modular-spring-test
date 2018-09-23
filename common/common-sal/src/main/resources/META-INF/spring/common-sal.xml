@@ -4,6 +4,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.yxffcode.cn/modular http://www.yxffcode.cn/modular.xsd">
 
   <modular:plugin>
-    <test name="testPluginService"/>
+    <!--<test name="testPluginService"/>-->
   </modular:plugin>
 </beans>
